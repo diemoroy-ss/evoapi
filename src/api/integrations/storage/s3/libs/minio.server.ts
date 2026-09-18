@@ -11,6 +11,8 @@ const BUCKET = new ConfigService().get<S3>('S3');
 
 interface Metadata extends MinIo.ItemBucketMetadata {
   'Content-Type': string;
+  'Cache-Control'?: string;
+  [key: string]: any;
 }
 
 const minioClient = (() => {
